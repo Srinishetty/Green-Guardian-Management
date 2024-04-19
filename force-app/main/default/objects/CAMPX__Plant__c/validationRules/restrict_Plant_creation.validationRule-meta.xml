@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>restrict_Plant_creation</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL(CAMPX__Garden__r.CAMPX__Status__c, &apos;Permanent Closure&apos;)</errorConditionFormula>
+    <errorMessage>The garden selected for this plant is permanently closed. Please select a different garden.</errorMessage>
+</ValidationRule>

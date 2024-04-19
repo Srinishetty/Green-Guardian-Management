@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Maximum_and_Minimum_Plant_Count_blank</fullName>
+    <active>true</active>
+    <description>If Total Plant Count is greater than zero, the system must not allow blank values for Maximum Plant Count and Minimum Plant Count.</description>
+    <errorConditionFormula>AND(CAMPX__Total_Plant_Count__c &gt;0,
+    OR (
+        ISBLANK( CAMPX__Max_Plant_Count__c),
+        ISBLANK(  CAMPX__Minimum_Plant_Count__c)
+        )
+    )</errorConditionFormula>
+    <errorMessage>Maximum and Minimum Plant Count fields cannot be blank when there are plants in the Garden.</errorMessage>
+</ValidationRule>

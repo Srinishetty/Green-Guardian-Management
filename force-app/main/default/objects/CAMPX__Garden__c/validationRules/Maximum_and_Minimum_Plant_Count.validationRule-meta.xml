@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Maximum_and_Minimum_Plant_Count</fullName>
+    <active>true</active>
+    <description>The Maximum Plant Count value must always be greater than the Minimum Plant Count.</description>
+    <errorConditionFormula>AND( 
+    NOT(ISBLANK(CAMPX__Max_Plant_Count__c)),
+    NOT(ISBLANK(CAMPX__Minimum_Plant_Count__c)), 
+    CAMPX__Max_Plant_Count__c &lt; CAMPX__Minimum_Plant_Count__c
+)</errorConditionFormula>
+    <errorMessage>The Maximum Plant Count must be greater than or equal to the Minimum Plant Count</errorMessage>
+</ValidationRule>

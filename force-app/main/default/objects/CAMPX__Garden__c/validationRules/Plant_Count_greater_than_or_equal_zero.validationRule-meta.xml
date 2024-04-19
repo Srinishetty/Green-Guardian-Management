@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Plant_Count_greater_than_or_equal_zero</fullName>
+    <active>true</active>
+    <description>Maximum Plant Count, Minimum Plant Count, Total Plant Count, and Total Unhealthy Plant Count must always be non-negative. Attempting to enter a negative value should prompt an error message: &quot;Plant Count fields must be greater than or equal to zero.&quot;</description>
+    <errorConditionFormula>OR(
+        CAMPX__Max_Plant_Count__c &lt; 0,
+        CAMPX__Minimum_Plant_Count__c &lt; 0,
+        CAMPX__Total_Plant_Count__c &lt; 0,
+        CAMPX__Total_Unhealthy_Plant_Count__c &lt; 0)</errorConditionFormula>
+    <errorMessage>Plant Count fields must be greater than or equal to zero.</errorMessage>
+</ValidationRule>
